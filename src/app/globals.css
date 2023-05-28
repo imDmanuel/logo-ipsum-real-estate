@@ -1,3 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-black;
+  }
+
+  h2 {
+    @apply font-bold my-5 text-5xl capitalize text-primary text-center font-playfair_display;
+  }
+}
+
+@layer components {
+  .featured-card {
+    box-shadow: 0px 10px 20px 0px rgba(41, 41, 42, 0.07);
+    @apply p-6 rounded-md;
+  }
+
+  .featured-card > h3 {
+    @apply text-opacity-80 text-black text-lg font-semibold pb-5;
+  }
+
+  h2 + p {
+    @apply font-medium text-xs text-center leading-4 text-opacity-80 text-black;
+  }
+
+  .header-text {
+    @apply text-center tracking-wider max-w-3xl mx-auto leading-8 text-[#2f234fe6] mb-14;
+  }
+
+  .featured-card > p {
+    @apply text-opacity-50 text-black text-sm leading-6;
+  }
+
+  .team-member {
+    @apply text-center p-8 hover:shadow-md hover:rounded-lg;
+  }
+
+  .team-member img {
+    @apply w-48 aspect-square rounded-full;
+  }
+
+  .team-member h4 {
+    @apply font-black pt-4 pb-1;
+  }
+
+  .team-member span {
+    @apply text-opacity-50 text-black;
+  }
+
+  .team-member .socials {
+    @apply flex invisible justify-center;
+  }
+
+  .team-member:hover .socials {
+    @apply visible;
+  }
+
+  .team-member .socials a {
+    @apply mx-2 hover:text-primary cursor-pointer mt-4;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white rounded-md py-2 px-3 shadow-sm;
+  }
+
+  .text-input {
+    @apply text-[#667085] w-full drop-shadow-sm py-2 px-3 border rounded-md border-[#D0D5DD];
+  }
+}
+
+@layer utilities {
+  .cs-shadow {
+    box-shadow: 0px 10px 20px 0px rgba(41, 41, 42, 0.07);
+  }
+}

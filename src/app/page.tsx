@@ -1,91 +1,75 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
+import { Header } from "./components/header";
+import { FiSearch } from "react-icons/fi";
+import { FeaturedProperties } from "./components/featured-properties";
+import { OurFeatures } from "./components/our-features";
+import { RecentProperties } from "./components/recent-properties";
+import { Team } from "./components/team";
+import { Testimonial } from "./components/testimonial";
+import { ActionSection } from "./components/action-section";
+import { Footer } from "./components/footer";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={"font-montserrat"}>
+      <Header />
+
+      {/* Search section */}
+      <section className="container">
+        <div className="p-8 drop-shadow bg-white rounded-lg -translate-y-1/2 mx-auto">
+          <div className="flex items-center space-x-2 mb-8">
+            <h3 className="capitalize">Find your Home</h3>
+            {/* Icon */}
+            <FiSearch />
+          </div>
+
+          <form className="grid items-center grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+              <input
+                type="text"
+                name="location"
+                id="location"
+                className="text-input"
+                placeholder="Location"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="category"
+                id="category"
+                className="text-input"
+                placeholder="Category"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="property-type"
+                id="property-type"
+                className="text-input"
+                placeholder="Property Type"
+              />
+            </div>
+
+            <input type="submit" value="Search" className="btn-primary" />
+          </form>
         </div>
-      </div>
+      </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+      <FeaturedProperties />
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <OurFeatures />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
+      <RecentProperties />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Team />
+
+      <Testimonial />
+
+      <ActionSection />
+
+      <Footer />
     </main>
-  )
+  );
 }
