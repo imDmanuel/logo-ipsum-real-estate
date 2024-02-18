@@ -63,7 +63,7 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-white rounded-md py-2 px-3 shadow-sm;
+    @apply bg-primary text-sm text-white rounded-md py-3 px-4 shadow-sm;
   }
 
   .text-input {
@@ -74,5 +74,23 @@
 @layer utilities {
   .cs-shadow {
     box-shadow: 0px 10px 20px 0px rgba(41, 41, 42, 0.07);
+  }
+
+  .menu-bar,
+  .menu-bar::after,
+  .menu-bar::before {
+    @apply block w-5 h-1 bg-white rounded z-10 transition-all duration-500;
+  }
+
+  .menu-bar::before {
+    @apply content-[""] translate-y-2 peer-checked:rotate-45 peer-checked:translate-x-12 peer-checked:translate-y-[2px];
+  }
+
+  .menu-bar::after {
+    @apply content-[""] -translate-y-[0.7rem] peer-checked:-rotate-45 peer-checked:translate-x-12 peer-checked:-translate-y-[2px];
+  }
+
+  .menu-bar {
+    @apply peer-checked:-translate-x-12 peer-checked:bg-transparent;
   }
 }

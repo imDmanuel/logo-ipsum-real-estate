@@ -7,5 +7,5 @@ export const NavLink = (
       children?: React.ReactNode;
     } & React.RefAttributes<HTMLAnchorElement>
 ) => {
-  return <NextLink {...props} className={"text-white font-semibold text-sm"} />;
+  return <NextLink {...props} className={"text-white font-semibold"} />;
 };

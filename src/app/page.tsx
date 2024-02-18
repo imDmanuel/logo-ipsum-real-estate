@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
 
       {/* Search section */}
-      <section className="container">
+      <section className="container fadeinup">
         <div className="p-8 drop-shadow bg-white rounded-lg -translate-y-1/2 mx-auto">
           <div className="flex items-center space-x-2 mb-8">
             <h3 className="capitalize">Find your Home</h3>

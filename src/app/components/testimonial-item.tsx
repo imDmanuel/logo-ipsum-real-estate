@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { PropsFrom } from "../types";
+import { RiDoubleQuotesL } from "react-icons/ri";
 
 type TestimonialItemProps = {
   profileImg: PropsFrom<typeof Image>["src"];
@@ -20,6 +21,7 @@ export function TestimonialItem({
   return (
     <div className="text-center">
       <div className="shadow-lg text-black px-7 py-6 rounded-lg relative after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[10px] after:border-solid after:border-[white_transparent_transparent_transparent]">
+        <RiDoubleQuotesL className="text-opacity-10 text-primary mx-auto text-3xl" />
         <div className="font-medium text-sm tracking-wide py-2 text-black-light">
           {header}
         </div>

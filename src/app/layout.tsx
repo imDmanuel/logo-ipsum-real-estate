@@ -1,7 +1,8 @@
-import Head from "next/head";
 import { Navbar } from "./components/navbar";
 import "./globals.css";
 import { montserrat, playfair_Display } from "./utilities";
+import "animate.css";
+import "aos/dist/aos.css";
 
 export const metadata = {
   title: "Real estate website",
